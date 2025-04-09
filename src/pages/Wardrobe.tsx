@@ -28,8 +28,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Shirt, Gem, Filter, Upload } from "lucide-react";
+import { Plus, Shirt, Gem, Filter, Upload, Camera } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 // Sample wardrobe data
 const initialWardrobe = [
@@ -81,6 +86,8 @@ export default function Wardrobe() {
     season: "",
     image: "/placeholder.svg",
   });
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [showCamera, setShowCamera] = useState(false);
   const { toast } = useToast();
 
   const filteredItems = activeTab === "all" 
@@ -102,6 +109,7 @@ export default function Wardrobe() {
       {
         id: (wardrobe.length + 1).toString(),
         ...newItem,
+        image: imagePreview || "/placeholder.svg",
       },
     ];
     
@@ -113,11 +121,69 @@ export default function Wardrobe() {
       season: "",
       image: "/placeholder.svg",
     });
+    setImagePreview(null);
     
     toast({
       title: "Item added",
       description: "Your item has been added to your wardrobe",
     });
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const startCamera = () => {
+    setShowCamera(true);
+  };
+
+  const stopCamera = () => {
+    setShowCamera(false);
+  };
+
+  const takePhoto = () => {
+    const videoElement = document.getElementById('camera') as HTMLVideoElement;
+    const canvas = document.createElement('canvas');
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    canvas.getContext('2d')?.drawImage(videoElement, 0, 0);
+    
+    const imageDataUrl = canvas.toDataURL('image/jpeg');
+    setImagePreview(imageDataUrl);
+    stopCamera();
+    
+    toast({
+      title: "Photo taken",
+      description: "You can now add this item to your wardrobe",
+    });
+  };
+
+  const initializeCamera = async () => {
+    try {
+      const videoElement = document.getElementById('camera') as HTMLVideoElement;
+      if (videoElement) {
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { facingMode: 'environment' } 
+        });
+        videoElement.srcObject = stream;
+        await videoElement.play();
+      }
+    } catch (err) {
+      toast({
+        title: "Camera error",
+        description: "Unable to access camera. Please check permissions.",
+        variant: "destructive",
+      });
+      console.error("Error accessing camera:", err);
+      stopCamera();
+    }
   };
 
   return (
@@ -217,12 +283,49 @@ export default function Wardrobe() {
                   </Select>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="image" className="text-right">
-                    Image
-                  </Label>
-                  <Button variant="outline" className="col-span-3">
-                    <Upload className="mr-2 h-4 w-4" /> Upload Image
-                  </Button>
+                  <Label className="text-right">Image</Label>
+                  <div className="col-span-3 flex flex-col gap-4">
+                    <div className="flex gap-2">
+                      <label htmlFor="image-upload" className="flex-1">
+                        <Button variant="outline" className="w-full" asChild>
+                          <div>
+                            <Upload className="mr-2 h-4 w-4" /> Upload Image
+                          </div>
+                        </Button>
+                        <Input
+                          id="image-upload"
+                          type="file"
+                          accept="image/*"
+                          onChange={handleFileUpload}
+                          className="hidden"
+                        />
+                      </label>
+                      <Button 
+                        variant="outline" 
+                        onClick={startCamera}
+                        className="flex-1"
+                      >
+                        <Camera className="mr-2 h-4 w-4" /> Take Photo
+                      </Button>
+                    </div>
+                    {imagePreview && (
+                      <div className="mt-2 relative aspect-square w-full">
+                        <img 
+                          src={imagePreview} 
+                          alt="Preview" 
+                          className="w-full h-full object-cover rounded-md"
+                        />
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          className="absolute top-2 right-2"
+                          onClick={() => setImagePreview(null)}
+                        >
+                          Remove
+                        </Button>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
               <DialogFooter>
@@ -234,6 +337,40 @@ export default function Wardrobe() {
           </Dialog>
         </div>
       </div>
+
+      {showCamera && (
+        <Dialog open={showCamera} onOpenChange={setShowCamera}>
+          <DialogContent className="sm:max-w-[600px]">
+            <DialogHeader>
+              <DialogTitle>Take a Photo</DialogTitle>
+              <DialogDescription>
+                Position your item in the frame and take a photo
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex flex-col items-center">
+              <div 
+                className="relative w-full aspect-video bg-black rounded-md overflow-hidden"
+                onLoad={initializeCamera}
+              >
+                <video 
+                  id="camera" 
+                  className="w-full h-full object-cover" 
+                  autoPlay 
+                  playsInline
+                ></video>
+              </div>
+              <div className="flex gap-4 mt-4">
+                <Button variant="outline" onClick={stopCamera}>
+                  Cancel
+                </Button>
+                <Button onClick={takePhoto}>
+                  <Camera className="mr-2 h-4 w-4" /> Capture
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
 
       <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
         <TabsList className="mb-6">
