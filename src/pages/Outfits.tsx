@@ -1,11 +1,10 @@
-
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Sparkles, Heart } from "lucide-react";
 import { useState } from "react";
 
-// Sample outfit data
+// Sample outfit data with images
 const initialOutfits = [
   {
     id: "1",
@@ -14,7 +13,7 @@ const initialOutfits = [
     occasion: "casual",
     season: "all",
     favorite: false,
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "2",
@@ -23,7 +22,7 @@ const initialOutfits = [
     occasion: "formal",
     season: "all",
     favorite: true,
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "3",
@@ -32,7 +31,7 @@ const initialOutfits = [
     occasion: "casual",
     season: "summer",
     favorite: false,
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
 ];
 

@@ -43,7 +43,13 @@ export default function Seasonal() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1596285508445-9a4ac4cb513e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Spring outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -51,7 +57,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Spring outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -59,7 +71,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Spring outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -74,8 +92,8 @@ export default function Seasonal() {
               <CardHeader className="p-0">
                 <div className="aspect-video bg-secondary">
                   <img
-                    src="/placeholder.svg"
-                    alt="Summer outfit"
+                    src="https://images.unsplash.com/photo-1562137369-1a1a0bc6814a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Beach Day outfit"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -89,8 +107,8 @@ export default function Seasonal() {
               <CardHeader className="p-0">
                 <div className="aspect-video bg-secondary">
                   <img
-                    src="/placeholder.svg"
-                    alt="Summer outfit"
+                    src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Summer Party outfit"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -104,8 +122,8 @@ export default function Seasonal() {
               <CardHeader className="p-0">
                 <div className="aspect-video bg-secondary">
                   <img
-                    src="/placeholder.svg"
-                    alt="Summer outfit"
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Picnic in the Park outfit"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -128,7 +146,13 @@ export default function Seasonal() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Fall outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -136,7 +160,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1555069519-127aadedf1ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Fall outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -144,7 +174,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1608236415057-b0a2caea5d33?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Fall outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -163,7 +199,13 @@ export default function Seasonal() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Winter outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -171,7 +213,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1608236415057-b0a2caea5d33?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Winter outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>
@@ -179,7 +227,13 @@ export default function Seasonal() {
             </Card>
             <Card className="opacity-50">
               <CardHeader className="p-0">
-                <div className="aspect-video bg-secondary" />
+                <div className="aspect-video bg-secondary">
+                  <img
+                    src="https://images.unsplash.com/photo-1576961422845-c90154f32fe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Winter outfit placeholder"
+                    className="w-full h-full object-cover opacity-50"
+                  />
+                </div>
               </CardHeader>
               <CardContent className="p-4">
                 <h3 className="font-medium">Coming Soon</h3>

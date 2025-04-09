@@ -100,9 +100,21 @@ export default function Index() {
               <h3 className="text-lg font-medium">Today's Outfit Suggestion</h3>
               <div className="flex items-center mt-4 gap-4">
                 <div className="grid grid-cols-3 gap-2 flex-1">
-                  <div className="aspect-square bg-secondary rounded-md"></div>
-                  <div className="aspect-square bg-secondary rounded-md"></div>
-                  <div className="aspect-square bg-secondary rounded-md"></div>
+                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         className="w-full h-full object-cover" 
+                         alt="White T-shirt" />
+                  </div>
+                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         className="w-full h-full object-cover" 
+                         alt="Blue Jeans" />
+                  </div>
+                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         className="w-full h-full object-cover" 
+                         alt="White Sneakers" />
+                  </div>
                 </div>
                 <Button>Try It</Button>
               </div>
@@ -118,8 +130,8 @@ export default function Index() {
             <CardHeader className="p-0">
               <div className="aspect-video bg-secondary">
                 <img
-                  src="/placeholder.svg"
-                  alt="Outfit"
+                  src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Casual Friday Outfit"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -134,8 +146,8 @@ export default function Index() {
             <CardHeader className="p-0">
               <div className="aspect-video bg-secondary">
                 <img
-                  src="/placeholder.svg"
-                  alt="Outfit"
+                  src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Business Meeting Outfit"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -150,8 +162,8 @@ export default function Index() {
             <CardHeader className="p-0">
               <div className="aspect-video bg-secondary">
                 <img
-                  src="/placeholder.svg"
-                  alt="Outfit"
+                  src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Weekend Brunch Outfit"
                   className="w-full h-full object-cover"
                 />
               </div>
