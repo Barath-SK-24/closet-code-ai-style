@@ -36,7 +36,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-// Sample wardrobe data
+// Sample wardrobe data with better positioned dress images
 const initialWardrobe = [
   {
     id: "1",
@@ -44,7 +44,7 @@ const initialWardrobe = [
     category: "tops",
     color: "white",
     season: "all",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "2",
@@ -52,7 +52,7 @@ const initialWardrobe = [
     category: "bottoms",
     color: "blue",
     season: "all",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "3",
@@ -60,7 +60,7 @@ const initialWardrobe = [
     category: "dresses",
     color: "black",
     season: "all",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1550639525-c97d455acf70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "4",
@@ -68,7 +68,39 @@ const initialWardrobe = [
     category: "outerwear",
     color: "brown",
     season: "fall",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "5",
+    name: "Floral Summer Dress",
+    category: "dresses",
+    color: "red",
+    season: "summer",
+    image: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "6",
+    name: "Navy Blazer",
+    category: "outerwear",
+    color: "blue",
+    season: "spring",
+    image: "https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "7",
+    name: "White Sneakers",
+    category: "shoes",
+    color: "white",
+    season: "all",
+    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "8",
+    name: "Gold Necklace",
+    category: "accessories",
+    color: "other",
+    season: "all",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   },
 ];
 
