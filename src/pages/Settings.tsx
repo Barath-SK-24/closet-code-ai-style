@@ -6,19 +6,42 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Settings() {
+  const { theme, setTheme } = useTheme();
   const [settings, setSettings] = useState({
     notifications: true,
     emailUpdates: false,
-    darkMode: false,
+    darkMode: theme === "dark",
     autoSync: true,
   });
   const { toast } = useToast();
 
+  // Update settings when theme changes externally
+  useEffect(() => {
+    setSettings(prev => ({
+      ...prev,
+      darkMode: theme === "dark"
+    }));
+  }, [theme]);
+
+  const handleDarkModeChange = (checked: boolean) => {
+    const newTheme = checked ? "dark" : "light";
+    setTheme(newTheme);
+    setSettings({ ...settings, darkMode: checked });
+  };
+
   const saveSettings = () => {
+    // Save other settings to localStorage
+    localStorage.setItem("userSettings", JSON.stringify({
+      notifications: settings.notifications,
+      emailUpdates: settings.emailUpdates,
+      autoSync: settings.autoSync
+    }));
+
     toast({
       title: "Settings saved",
       description: "Your preferences have been updated",
@@ -100,9 +123,7 @@ export default function Settings() {
                 </div>
                 <Switch
                   checked={settings.darkMode}
-                  onCheckedChange={(checked) =>
-                    setSettings({ ...settings, darkMode: checked })
-                  }
+                  onCheckedChange={handleDarkModeChange}
                 />
               </div>
 
