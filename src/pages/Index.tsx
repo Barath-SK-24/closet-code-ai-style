@@ -7,22 +7,62 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shirt, HeartHandshake, Sparkles, Calendar } from "lucide-react";
+import { Shirt, HeartHandshake, Sparkles, Calendar, Github, Code, Users } from "lucide-react";
 
 export default function Index() {
   return (
     <Layout>
       <section className="mb-8 animate-fade-in">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-3">Welcome to StyleAI</h1>
+          <h1 className="text-4xl font-bold mb-3">StyleAI - Digital Wardrobe</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Your AI-powered digital wardrobe stylist
+            An open-source AI-powered digital wardrobe stylist
           </p>
+          <div className="flex justify-center gap-4 mt-6">
+            <Button asChild>
+              <a href="https://github.com/yourusername/stylai-wardrobe" target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" /> View on GitHub
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="#features">
+                Explore Features
+              </a>
+            </Button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-fashion-mid-purple/10 rounded-lg p-6 mb-8">
+          <div className="flex flex-col lg:flex-row items-center gap-6">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl font-bold mb-4">Digital Wardrobe Management</h2>
+              <p className="text-lg mb-4">
+                StyleAI helps you organize your wardrobe, create outfits, and get AI-powered style recommendations.
+                Perfect for fashion enthusiasts and anyone looking to make the most of their clothing collection.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">React</span>
+                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">TypeScript</span>
+                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm">shadcn/ui</span>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <div className="bg-background p-4 rounded-lg shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1560243563-062bfc001d68?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  alt="StyleAI Preview" 
+                  className="rounded-md w-full h-auto" 
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Card className="hover:border-primary transition-all duration-300">
             <CardHeader className="pb-2">
               <Shirt className="w-8 h-8 text-primary mb-2" />
@@ -32,10 +72,15 @@ export default function Index() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Add, edit, and organize your wardrobe items with ease. Upload photos or use the camera to capture your clothes.
+              </p>
+            </CardContent>
+            <CardFooter>
               <Button variant="outline" className="w-full" asChild>
                 <a href="/wardrobe">View Wardrobe</a>
               </Button>
-            </CardContent>
+            </CardFooter>
           </Card>
 
           <Card className="hover:border-primary transition-all duration-300">
@@ -47,10 +92,15 @@ export default function Index() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Combine items from your wardrobe to create perfect outfits for any occasion. Save and categorize your favorite combinations.
+              </p>
+            </CardContent>
+            <CardFooter>
               <Button variant="outline" className="w-full" asChild>
                 <a href="/outfits">Create Outfits</a>
               </Button>
-            </CardContent>
+            </CardFooter>
           </Card>
 
           <Card className="hover:border-primary transition-all duration-300">
@@ -62,10 +112,15 @@ export default function Index() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Leverage AI to get personalized outfit recommendations based on your style preferences, weather, and occasion.
+              </p>
+            </CardContent>
+            <CardFooter>
               <Button variant="outline" className="w-full" disabled>
                 Coming Soon
               </Button>
-            </CardContent>
+            </CardFooter>
           </Card>
 
           <Card className="hover:border-primary transition-all duration-300">
@@ -77,104 +132,133 @@ export default function Index() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                Plan your outfits for different seasons and special events. Get seasonal wardrobe suggestions and rotation tips.
+              </p>
+            </CardContent>
+            <CardFooter>
               <Button variant="outline" className="w-full" disabled>
                 Coming Soon
               </Button>
-            </CardContent>
+            </CardFooter>
           </Card>
         </div>
       </section>
 
-      <section className="mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+      <section className="mb-12 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h2 className="text-2xl font-bold mb-6">Project Overview</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card>
+            <CardHeader>
+              <Code className="h-8 w-8 text-primary mb-2" />
+              <CardTitle>Open Source</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                StyleAI is completely open source. Feel free to contribute, fork, or use it as a template for your own projects.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="w-full" asChild>
+                <a href="https://github.com/yourusername/stylai-wardrobe" target="_blank" rel="noopener noreferrer">
+                  View Source
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <Users className="h-8 w-8 text-primary mb-2" />
+              <CardTitle>Community Driven</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Join our community of fashion enthusiasts and developers to help shape the future of StyleAI.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="w-full" asChild>
+                <a href="https://github.com/yourusername/stylai-wardrobe/discussions" target="_blank" rel="noopener noreferrer">
+                  Join Discussion
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <Sparkles className="h-8 w-8 text-primary mb-2" />
+              <CardTitle>AI Powered</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Leveraging AI technology to provide smart recommendations and enhance your wardrobe management experience.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="w-full" asChild>
+                <a href="https://github.com/yourusername/stylai-wardrobe#ai-features" target="_blank" rel="noopener noreferrer">
+                  Learn More
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </section>
+
+      <section className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
         <Card className="bg-gradient-to-br from-fashion-mid-purple/10 to-fashion-light-purple/30">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <Sparkles className="mr-2 h-5 w-5" /> AI Style Recommendations
-            </CardTitle>
+            <CardTitle className="text-2xl">Getting Started</CardTitle>
             <CardDescription>
-              Get personalized outfit suggestions based on your wardrobe
+              Quick steps to set up the project locally
             </CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col gap-4">
+          <CardContent>
             <div className="bg-background/60 backdrop-blur-sm p-4 rounded-lg">
-              <h3 className="text-lg font-medium">Today's Outfit Suggestion</h3>
-              <div className="flex items-center mt-4 gap-4">
-                <div className="grid grid-cols-3 gap-2 flex-1">
-                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         className="w-full h-full object-cover" 
-                         alt="White T-shirt" />
-                  </div>
-                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         className="w-full h-full object-cover" 
-                         alt="Blue Jeans" />
-                  </div>
-                  <div className="aspect-square bg-secondary rounded-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         className="w-full h-full object-cover" 
-                         alt="White Sneakers" />
-                  </div>
-                </div>
-                <Button>Try It</Button>
-              </div>
+              <ol className="list-decimal list-inside space-y-2 ml-2">
+                <li className="text-sm">
+                  <span className="font-medium">Clone the repository:</span>
+                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
+                    git clone https://github.com/yourusername/stylai-wardrobe.git
+                  </pre>
+                </li>
+                <li className="text-sm">
+                  <span className="font-medium">Install dependencies:</span>
+                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
+                    cd stylai-wardrobe && npm install
+                  </pre>
+                </li>
+                <li className="text-sm">
+                  <span className="font-medium">Start the development server:</span>
+                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
+                    npm run dev
+                  </pre>
+                </li>
+                <li className="text-sm">
+                  <span className="font-medium">Open in your browser:</span>
+                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
+                    http://localhost:8080
+                  </pre>
+                </li>
+              </ol>
+            </div>
+            <div className="mt-6 text-center">
+              <Button asChild>
+                <a href="https://github.com/yourusername/stylai-wardrobe#readme" target="_blank" rel="noopener noreferrer">
+                  Read Full Documentation
+                </a>
+              </Button>
             </div>
           </CardContent>
         </Card>
       </section>
 
-      <section className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-        <h2 className="text-2xl font-bold mb-4">Recent Outfits</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card>
-            <CardHeader className="p-0">
-              <div className="aspect-video bg-secondary">
-                <img
-                  src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Casual Friday Outfit"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </CardHeader>
-            <CardContent className="p-4">
-              <h3 className="font-medium">Casual Friday</h3>
-              <p className="text-sm text-muted-foreground">3 items</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="p-0">
-              <div className="aspect-video bg-secondary">
-                <img
-                  src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Business Meeting Outfit"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </CardHeader>
-            <CardContent className="p-4">
-              <h3 className="font-medium">Business Meeting</h3>
-              <p className="text-sm text-muted-foreground">4 items</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="p-0">
-              <div className="aspect-video bg-secondary">
-                <img
-                  src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                  alt="Weekend Brunch Outfit"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </CardHeader>
-            <CardContent className="p-4">
-              <h3 className="font-medium">Weekend Brunch</h3>
-              <p className="text-sm text-muted-foreground">3 items</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <footer className="mt-16 text-center text-sm text-muted-foreground">
+        <p>StyleAI is an open source project. View the <a href="https://github.com/yourusername/stylai-wardrobe/blob/main/LICENSE" className="underline hover:text-primary">license</a>.</p>
+        <p className="mt-1">&copy; {new Date().getFullYear()} StyleAI Contributors</p>
+      </footer>
     </Layout>
   );
 }
