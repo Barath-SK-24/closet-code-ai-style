@@ -10,7 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shirt, HeartHandshake, Sparkles, Calendar, Github, Code, Users } from "lucide-react";
+import { Shirt, HeartHandshake, Sparkles, Calendar, Code, Users } from "lucide-react";
 
 export default function Index() {
   return (
@@ -19,17 +19,17 @@ export default function Index() {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-3">StyleAI - Digital Wardrobe</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            An open-source AI-powered digital wardrobe stylist
+            An AI-powered digital wardrobe stylist
           </p>
           <div className="flex justify-center gap-4 mt-6">
             <Button asChild>
-              <a href="https://github.com/yourusername/stylai-wardrobe" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" /> View on GitHub
+              <a href="#features">
+                Explore Features
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="#features">
-                Explore Features
+              <a href="#getting-started">
+                Get Started
               </a>
             </Button>
           </div>
@@ -151,17 +151,17 @@ export default function Index() {
           <Card>
             <CardHeader>
               <Code className="h-8 w-8 text-primary mb-2" />
-              <CardTitle>Open Source</CardTitle>
+              <CardTitle>Free to Use</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                StyleAI is completely open source. Feel free to contribute, fork, or use it as a template for your own projects.
+                StyleAI is completely free to use. Feel free to customize it for your personal wardrobe management needs.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://github.com/yourusername/stylai-wardrobe" target="_blank" rel="noopener noreferrer">
-                  View Source
+                <a href="#getting-started">
+                  Get Started
                 </a>
               </Button>
             </CardFooter>
@@ -174,13 +174,13 @@ export default function Index() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Join our community of fashion enthusiasts and developers to help shape the future of StyleAI.
+                Join our community of fashion enthusiasts to help shape the future of StyleAI.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://github.com/yourusername/stylai-wardrobe/discussions" target="_blank" rel="noopener noreferrer">
-                  Join Discussion
+                <a href="/profile">
+                  Join Community
                 </a>
               </Button>
             </CardFooter>
@@ -198,7 +198,7 @@ export default function Index() {
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://github.com/yourusername/stylai-wardrobe#ai-features" target="_blank" rel="noopener noreferrer">
+                <a href="#features">
                   Learn More
                 </a>
               </Button>
@@ -207,47 +207,39 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
+      <section id="getting-started" className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
         <Card className="bg-gradient-to-br from-fashion-mid-purple/10 to-fashion-light-purple/30">
           <CardHeader>
             <CardTitle className="text-2xl">Getting Started</CardTitle>
             <CardDescription>
-              Quick steps to set up the project locally
+              Quick steps to start using StyleAI
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="bg-background/60 backdrop-blur-sm p-4 rounded-lg">
               <ol className="list-decimal list-inside space-y-2 ml-2">
                 <li className="text-sm">
-                  <span className="font-medium">Clone the repository:</span>
-                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
-                    git clone https://github.com/yourusername/stylai-wardrobe.git
-                  </pre>
+                  <span className="font-medium">Create an account:</span>
+                  <p className="text-muted-foreground ml-2 mt-1">Sign up with your email or social media account</p>
                 </li>
                 <li className="text-sm">
-                  <span className="font-medium">Install dependencies:</span>
-                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
-                    cd stylai-wardrobe && npm install
-                  </pre>
+                  <span className="font-medium">Add your wardrobe items:</span>
+                  <p className="text-muted-foreground ml-2 mt-1">Take photos of your clothing or upload existing images</p>
                 </li>
                 <li className="text-sm">
-                  <span className="font-medium">Start the development server:</span>
-                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
-                    npm run dev
-                  </pre>
+                  <span className="font-medium">Create outfits:</span>
+                  <p className="text-muted-foreground ml-2 mt-1">Mix and match items to build your outfit collections</p>
                 </li>
                 <li className="text-sm">
-                  <span className="font-medium">Open in your browser:</span>
-                  <pre className="bg-secondary p-2 rounded-sm mt-1 overflow-x-auto">
-                    http://localhost:8080
-                  </pre>
+                  <span className="font-medium">Get AI recommendations:</span>
+                  <p className="text-muted-foreground ml-2 mt-1">Let StyleAI suggest outfit combinations based on your style</p>
                 </li>
               </ol>
             </div>
             <div className="mt-6 text-center">
               <Button asChild>
-                <a href="https://github.com/yourusername/stylai-wardrobe#readme" target="_blank" rel="noopener noreferrer">
-                  Read Full Documentation
+                <a href="/wardrobe">
+                  Start Adding Your Wardrobe
                 </a>
               </Button>
             </div>
@@ -256,8 +248,8 @@ export default function Index() {
       </section>
 
       <footer className="mt-16 text-center text-sm text-muted-foreground">
-        <p>StyleAI is an open source project. View the <a href="https://github.com/yourusername/stylai-wardrobe/blob/main/LICENSE" className="underline hover:text-primary">license</a>.</p>
-        <p className="mt-1">&copy; {new Date().getFullYear()} StyleAI Contributors</p>
+        <p>StyleAI - Digital Wardrobe Stylist</p>
+        <p className="mt-1">&copy; {new Date().getFullYear()} StyleAI</p>
       </footer>
     </Layout>
   );
